@@ -70,10 +70,11 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x93482eF95Da38F9A41B922CA0874d7581dCFc19c",
-      "transactionHash": "0xc404117dbea61a306361fea0b57095be05d0c49e15564c8132cb8e898e60af43"
+      "address": "0xD01309C56fc939cF14F997152C655a6BBFc5A57b",
+      "transactionHash": "0xcf297a8a8b558c91e9a054ec6fe7fbf605491fb614c251e3cd6db13744894d72"
     }
   },
   "schemaVersion": "3.4.15",
-  "updatedAt": "2023-08-15T08:50:20.399Z"
+  "updatedAt": "2023-08-15T19:05:21.811Z",
+  "networkType": "ethereum"
 }
