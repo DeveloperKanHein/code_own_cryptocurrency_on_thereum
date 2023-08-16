@@ -16,8 +16,28 @@ contract DappTokenSale{
         tokenPrice = _tokenPrice;
     }
 
+    //multiply
+    function multiply(uint x, uint y) internal returns (uint z){
+        return x * y;
+    }
+
     function buyTokens(uint256 _numberOfTokens) public payable{
-        tokenSold += _numberOfTokens;
-        Sell(msg.sender, _numberOfTokens);
+        if(msg.value == multiply(_numberOfTokens, tokenPrice)){
+            if(tokenContract.balanceOf(this) >= _numberOfTokens){
+                if(tokenContract.transfer(msg.sender, _numberOfTokens)){
+                    tokenSold += _numberOfTokens;
+                    Sell(msg.sender, _numberOfTokens);
+                }
+                
+            }
+        }
+    }
+
+    function endSale() public{
+        if(msg.sender == admin){
+            tokenContract.transfer(admin, tokenContract.balanceOf(this));
+            selfdestruct(admin);
+            
+        }
     }
 }
